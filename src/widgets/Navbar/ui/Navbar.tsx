@@ -1,23 +1,21 @@
-import React from "react";
-import styles from "./Navbar.module.scss";
-import cn from "shared/lib/classNames/classNames";
-import { AppLink } from "shared/ui/AppLink/AppLink";
+import React from 'react';
+import cn from 'shared/lib/classNames/classNames';
+import { AppLink } from 'shared/ui/AppLink/AppLink';
+import styles from './Navbar.module.scss';
 
 interface NavbarProps {
   className?: string;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ className }) => {
-  return (
+export const Navbar: React.FC<NavbarProps> = ({ className }) => (
     <div className={cn(styles.Navbar, [className])}>
-      <div className={styles.links}>
-        <AppLink theme="secondary" to="/">
-          Главная
-        </AppLink>
-        <AppLink theme="secondary" to="/about">
-          О сайте
-        </AppLink>
-      </div>
+        <div className={styles.links}>
+            <AppLink theme="secondary" to="/">
+                Главная
+            </AppLink>
+            <AppLink theme="secondary" to="/about">
+                О сайте
+            </AppLink>
+        </div>
     </div>
-  );
-};
+);
