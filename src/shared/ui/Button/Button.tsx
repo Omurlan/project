@@ -6,7 +6,7 @@ export type ButtonTypes = 'CLEAR';
 
 interface ButtonProps extends ComponentProps<'button'> {
   className?: string;
-  theme?: ButtonProps;
+  theme?: ButtonTypes;
 }
 
 export const Button: React.FC<ButtonProps> = ({
