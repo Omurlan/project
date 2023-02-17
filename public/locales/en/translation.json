@@ -1,5 +1,9 @@
 {
   "title": "Test translation",
   "translation": "Translation",
-  "language": "English"
+  "Main": "Main",
+  "About site": "About us",
+  "language": "English",
+  "notFound": "Page not found",
+  "Update page": "Update page"
 }
