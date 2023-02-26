@@ -2,7 +2,7 @@ import React, { ComponentProps } from 'react';
 import cn from 'shared/lib/classNames/classNames';
 import styles from './Button.module.scss';
 
-export type ButtonTypes = 'CLEAR';
+export type ButtonTypes = 'clear' | 'outlined';
 
 interface ButtonProps extends ComponentProps<'button'> {
   className?: string;
@@ -11,10 +11,18 @@ interface ButtonProps extends ComponentProps<'button'> {
 
 export const Button: React.FC<ButtonProps> = ({
     className,
+    theme,
     children,
     ...props
 }) => (
-    <button type="button" className={cn(styles.Button, [styles.clear, className])} {...props}>
+    <button
+        type="button"
+        className={cn(styles.Button, [className], {
+            [styles.clear]: theme === 'clear',
+            [styles.outlined]: theme === 'outlined',
+        })}
+        {...props}
+    >
         {children}
     </button>
 );
